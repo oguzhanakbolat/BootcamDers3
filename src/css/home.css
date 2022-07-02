@@ -1,0 +1,34 @@
+.Home {
+    height: calc(100vh - 78px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.login input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin: 10px 0;
+    outline: none;
+}
+
+.login button {
+    padding: 10px;
+    border: 0;
+    background: blue;
+    color: #fff;
+    outline: none;
+}
+
+.cikis {
+    margin-left: 10px;
+    padding: 3px 10px;
+}

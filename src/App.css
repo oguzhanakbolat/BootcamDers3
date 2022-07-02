@@ -2,37 +2,132 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  box-sizing: border-box
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.head {
+  background: blue;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 78px;
+}
+.head ul{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.head ul li {
+  padding: 0 10px;
+}
+
+.header {
+  border: 1px solid #ddd;
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 20px;
+}
+
+.header input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+.header select {
+  padding: 10px 30px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+
+.header button {
+  padding: 10px 30px;
+  border: 1px solid #ddd;
+  border-radius: 0 5px 5px 0;
+  outline: none;
+}
+
+.list {
+  border: 1px solid #ddd;
+  margin: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 20px;
+  list-style: none;
 }
 
-.App-link {
-  color: #61dafb;
+.list li {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.list li span {
+  display: flex;
+  flex: 4;
+}
+
+.list li strong {
+  font-weight: 400;
+  padding: 0 5px;
+  border-radius: 3px;
+  cursor: pointer;
+  transtion: all 300ms;
+  flex: 1;
+  text-align: center;
+  font-size: 14px;
+}
+
+.status1 {
+  background: red;
+  color: #fff;
+}
+.status2 {
+  background: orange;
+  color: #000;
+}
+.status3 {
+  background: yellow;
+  color: #000;
+}
+
+.alert {
+  background: red;
+  color: #fff;
+}
+
+.alertInput {
+  border: 1px solid #f00 !important;
+}
+
+.list li b {
+  font-weight: 400;
+  color: #fff;
+  background: #f00;
+  padding: 0 5px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 300ms;
+  margin-left: 10px;
+  font-size: 14px;
+}
+.list li b:hover {
+  background: #f005;
+}
+
+a {
+  color: #fff;
 }
