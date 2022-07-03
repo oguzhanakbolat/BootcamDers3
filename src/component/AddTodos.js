@@ -25,9 +25,9 @@ const AddTodos = ({
           value={selectData}
           onChange={e => changeSelect(e)}>
           <option value="">Seç</option>
-          <option value="Birincil">Birincil</option>
-          <option value="Ikincil">İkincil</option>
-          <option value="Ucuncul">Üçüncül</option>
+          <option value="1">Birincil</option>
+          <option value="2">İkincil</option>
+          <option value="3">Üçüncül</option>
         </select>
 
         <button onClick={addTodo}>Ekle</button>

@@ -1,5 +1,5 @@
-.Home {
-    height: calc(100vh - 78px);
+main {
+    height: calc(100vh - 156px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,4 +31,29 @@
 .cikis {
     margin-left: 10px;
     padding: 3px 10px;
+}
+
+.changeTemplate {
+    background: #fff;
+    padding:1px 2px ;
+    height: 26px;
+}
+.changeTemplate b {
+    display: inline-flex;
+    width: 20px;
+    height: 20px;
+    margin: 2px 1px;
+    cursor: pointer;
+}
+.changeTemplate .yellow {
+    background: orange;
+}
+.changeTemplate .blue {
+    background: blue;
+}
+.changeTemplate .black {
+    background: black;
+}
+.changeTemplate .red {
+    background: red;
 }

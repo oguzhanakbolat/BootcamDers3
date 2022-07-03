@@ -1,24 +1,32 @@
-import React from 'react'
+import React  from 'react'
 import { Link } from 'react-router-dom'
+import Logout from './Logout';
+import { useSetting } from '../context/SettingContext';
+import ChangeTemplate from './ChangeTemplate';
 
-const Header = (props) => {
+
+const Header = () => {
+    const { template } = useSetting();
   return (
-    <div className='head'>
+    <div className='head'
+        style={{
+            background: template.bg,
+            color: template.color,
+            fontSize: template.size
+        }}>
         <ul>
             <li>
-                <Link to="/">Home</Link>
+                <Link to="/" style={{ color: template.color }}>Home</Link>
             </li>
             <li>
-                <Link to="/ahmet">About Us</Link>
+                <Link to="/ahmet" style={{ color: template.color }}>About Us</Link>
             </li>
             <li>
-                <Link to="/list">List</Link>
+                <Link to="/list" style={{ color: template.color }}>List</Link>
             </li>
         </ul>
-        <span>
-            {props.user}
-            <button className='cikis' onClick={props.logout}>Çıkış</button>
-        </span>
+        <ChangeTemplate />
+        <Logout />
     </div>
   )
 }

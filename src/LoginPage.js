@@ -2,10 +2,12 @@ import React from 'react'
 import Login from './component/Login';
 import './css/home.css';
 
-const LoginPage = (props) => {
+const LoginPage = () => {
+
+
   return (
     <div className='Home'>
-        <Login login={props.login}  />
+        <Login />
     </div>
   )
 }

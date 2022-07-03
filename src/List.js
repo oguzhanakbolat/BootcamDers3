@@ -2,13 +2,16 @@ import { useEffect, useRef, useState } from 'react';
 import './App.css';
 import AddTodos from './component/AddTodos';
 import Todos from './component/Todos';
+import { useAuth } from './context/AuthContext';
 
 // localstorage
 // useRef
 
 function List() {
+  const { user } = useAuth();
   const inputRef = useRef();
   const [todos, setTodos] = useState([]);
+  const [userTodos, setUserTodos] = useState([]);
   const [inputData, setInputData] = useState('');
   const [selectData, setSelectData] = useState('');
   const [status, setStatus] = useState({
@@ -44,6 +47,7 @@ function List() {
     else {
       setTodos(list => [
         {
+          user,
           name: inputData,
           status: selectData
         },
@@ -89,6 +93,19 @@ function List() {
     setTodos(newData || []);
   }, []);
 
+  const deleteItem = index => {
+    const newTodos = [...todos];
+    newTodos.splice(index, 1);
+    setTodos(newTodos);
+    localStorage.setItem('todos', JSON.stringify(newTodos));
+  }
+
+  useEffect(() => {
+    const data = todos.filter(item => item.user === user);
+    setUserTodos(data);
+  }, [todos, user]);
+
+
   return (
     <div className="App">
       <AddTodos 
@@ -100,7 +117,9 @@ function List() {
         changeSelect={changeSelect}
         addTodo={addTodo}
       />
-      <Todos todos={todos} />
+      <Todos
+        todos={userTodos}
+        deleteItem={deleteItem} />
     </div>
   );
 }

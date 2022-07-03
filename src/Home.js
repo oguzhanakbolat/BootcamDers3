@@ -1,10 +1,14 @@
 import React from 'react'
+import Name from './component/Name';
+import { useAuth } from './context/AuthContext';
 import './css/home.css';
 
-const Home = (props) => {
+const Home = () => {
+  const { user } = useAuth();
+
   return (
     <div className='Home'>
-        <div>Hoş Geldin {props.user}</div>
+        <div>Hoş Geldin <Name user={user} /></div>
     </div>
   )
 }

@@ -1,7 +1,9 @@
 import React, { useRef } from 'react'
+import {useAuth} from '../context/AuthContext';
 
-const Login = ({ login }) => {
+const Login = () => {
 
+    const { login } = useAuth();
     const inputRef = useRef()
 
     const submit = () => {
@@ -13,14 +15,14 @@ const Login = ({ login }) => {
         }
     }
 
-    console.log(login)
-
   return (
-    <div className='login'>
-        <label>Kullanıcı Adı</label>
-        <input ref={inputRef} type="text" placeholder='Kullanıc adını gir' />
-        <button onClick={submit}>Giriş Yap</button>
-    </div>
+    <main>
+        <div className='login'>
+            <label>Kullanıcı Adı</label>
+            <input ref={inputRef} type="text" placeholder='Kullanıc adını gir' />
+            <button onClick={submit}>Giriş Yap</button>
+        </div>
+    </main>
   )
 }
 
